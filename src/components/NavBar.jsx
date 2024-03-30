@@ -89,7 +89,7 @@ export function NavBar() {
         <Typography variant="h6" className="mr-4 cursor-pointer py-1.5">
           <Link
             to="/"
-            className="flex items-center hover:text-blue-500 transition-colors"
+            className="flex items-center hover:text-purple-500 transition-colors"
           >
             MERC Armory
           </Link>
