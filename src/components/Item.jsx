@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export const Item = ({ item }) => {
   return (
-    <Card className="w-80 mt-2">
+    <Card className="self-start w-80 mt-2">
       <CardHeader shadow={false} floated={false} className="h-80">
         <img
           src={`/src/assets/products/${item.pictureUrl}`}

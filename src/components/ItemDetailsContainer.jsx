@@ -23,9 +23,9 @@ export const ItemDetailsContainer = () => {
 
   const SingleItemCard = () => {
     return (
-      <div className="flex flex-col min-w-[390px] wsm:flex-col md:flex-row">
+      <div className="flex flex-col min-w-[390px] wsm:flex-col md:flex-row p-8 bg-gray-300">
         <img
-          className="h-96 w-96 rounded-lg object-cover object-center"
+          className="h-96 w-96 rounded-lg object-cover object-center border-gray-700 border-2"
           src={`/src/assets/products/${item.pictureUrl}`}
           alt={item.title}
         />
@@ -42,7 +42,7 @@ export const ItemDetailsContainer = () => {
   };
 
   return (
-    <div className="container m-10">
+    <div className="bg-gray-600 px-6 pt-10 pb-6 max-w-7xl mx-auto shadow-md">
       <SingleItemCard />
     </div>
   );
