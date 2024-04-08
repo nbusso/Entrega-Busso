@@ -8,19 +8,24 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { CartWidget } from "./CartWidget";
 import { Link } from "react-router-dom";
+import { Logo } from "./Logo";
 
 function NavList() {
+  const customFont = "font-roboto font-bold";
+  const customHover =
+    "hover:text-synthwave-pinkBite hover:bg-synthwave-shadownPlanet p-2";
+
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`${customFont}`}
       >
         <Link
           to="/"
-          className="flex items-center hover:text-blue-500 transition-colors"
+          className={`flex items-center ${customHover} transition-colors`}
         >
           Inicio
         </Link>
@@ -29,11 +34,11 @@ function NavList() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`${customFont}`}
       >
         <Link
           to="/category/armas%20de%20fuego"
-          className="flex items-center hover:text-blue-500 transition-colors"
+          className={`flex items-center ${customHover} transition-colors`}
         >
           Armas de Fuego
         </Link>
@@ -42,11 +47,11 @@ function NavList() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`${customFont}`}
       >
         <Link
           to="/category/vestimenta"
-          className="flex items-center hover:text-blue-500 transition-colors"
+          className={`flex items-center ${customHover} transition-colors`}
         >
           Vesimenta
         </Link>
@@ -55,11 +60,11 @@ function NavList() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium"
+        className={`${customFont}`}
       >
         <Link
           to="/category/explosivos"
-          className="flex items-center hover:text-blue-500 transition-colors"
+          className={`flex items-center ${customHover} transition-colors`}
         >
           Explosivos
         </Link>
@@ -84,16 +89,17 @@ export function NavBar() {
   }, []);
 
   return (
-    <Navbar fullWidth={true} className="mx-auto max-w-screen-2xl px-6 py-3">
+    <Navbar
+      fullWidth={true}
+      className="mx-auto max-w-screen-2xl bg-vaporwave-gustoGold border-none shadow-md px-6 py-3"
+    >
       <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography variant="h6" className="mr-4 cursor-pointer py-1.5">
-          <Link
-            to="/"
-            className="flex items-center hover:text-purple-500 transition-colors"
-          >
-            MERC Armory
-          </Link>
-        </Typography>
+        <Link
+          to="/"
+          className="flex items-center hover:text-purple-500 transition-colors"
+        >
+          <Logo />
+        </Link>
         <div className="hidden lg:block">
           <NavList />
         </div>

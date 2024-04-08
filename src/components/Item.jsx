@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export const Item = ({ item }) => {
   return (
-    <Card className="w-80 mt-2">
+    <Card className="w-80 mt-2 bg-black border-2 border-vaporwave-gustoGold">
       <CardHeader shadow={false} floated={false} className="h-80">
         <img
           src={`/src/assets/products/${item.pictureUrl}`}
@@ -20,24 +20,31 @@ export const Item = ({ item }) => {
       </CardHeader>
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-bold">
+          <Typography
+            color="black"
+            className="font-roboto text-vaporwave-gustoGold font-bold"
+          >
             {item.title}
           </Typography>
-          <Typography color="blue-gray" className="font-medium">
+          <Typography
+            color="light-blue"
+            className="text-synthwave-pinkBite font-bold pl-1"
+          >
             ${item.price}
           </Typography>
         </div>
+        <hr className="border-synthwave-sapphireSplendour mb-2" />
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-90 mb-2"
+          className="text-synthwave-cleanPoolBlue font-normal opacity-90 mb-2"
         >
           {`${item.category} | ${item.brand}`}
         </Typography>
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-75"
+          className="text-synthwave-cleanPoolBlue font-normal opacity-75"
         >
           {item.description}
         </Typography>
@@ -46,7 +53,7 @@ export const Item = ({ item }) => {
         <Button
           ripple={false}
           fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+          className="bg-synthwave-shadownPlanet border border-synthwave-pinkBite text-synthwave-pinkBite shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
         >
           Agregar al Carrito
         </Button>
@@ -54,7 +61,7 @@ export const Item = ({ item }) => {
           <Button
             ripple={false}
             fullWidth={true}
-            className="bg-deep-orange-300 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100 mt-2"
+            className="bg-vaporwave-gustoGold text-vaporwave-vanishingPurple border border-vaporwave-vanishingPurple shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100 mt-2"
           >
             + Info
           </Button>
