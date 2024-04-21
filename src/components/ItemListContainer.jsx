@@ -25,7 +25,7 @@ export const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <div className="bg-gray-600 grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1 place-items-center mx-auto max-w-7xl p-8 sm:px-6 lg:px-8">
+    <div className="bg-synthwave-midnightDreams grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1 place-items-center mx-auto max-w-7xl pt-5 pb-14 px-2 sm:px-6 lg:px-8">
       <ItemList items={items} />
     </div>
   );
