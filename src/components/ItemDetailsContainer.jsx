@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data/products.json";
+import ItemCount from "./ItemCount";
 import { Typography } from "@material-tailwind/react";
 
 export const ItemDetailsContainer = () => {
@@ -43,6 +44,7 @@ export const ItemDetailsContainer = () => {
               variant="h1"
               className="text-right text-vaporwave-loveVesselPink"
             >{`$ ${item.price}`}</Typography>
+            <ItemCount item={item} />
           </div>
         </div>
       </div>

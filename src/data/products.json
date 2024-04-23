@@ -6,7 +6,8 @@
     "price": 5000,
     "pictureUrl": "0.jpg",
     "category": "Armas de Fuego",
-    "brand": "Karmac"
+    "brand": "Karmac",
+    "stock": 10
   },
   {
     "id": 1,
@@ -15,7 +16,8 @@
     "price": 950,
     "pictureUrl": "1.jpg",
     "category": "Vestimenta",
-    "brand": "Elventine"
+    "brand": "Elventine",
+    "stock": 10
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@
     "price": 99,
     "pictureUrl": "2.png",
     "category": "Explosivos",
-    "brand": "Boomcha"
+    "brand": "Boomcha",
+    "stock": 10
   },
   {
     "id": 3,
@@ -33,7 +36,8 @@
     "price": 149,
     "pictureUrl": "3.png",
     "category": "Explosivos",
-    "brand": "Boomcha"
+    "brand": "Boomcha",
+    "stock": 10
   },
   {
     "id": 4,
@@ -42,7 +46,8 @@
     "price": 350,
     "pictureUrl": "4.jpg",
     "category": "Vestimenta",
-    "brand": "Elventine"
+    "brand": "Elventine",
+    "stock": 10
   },
   {
     "id": 5,
@@ -51,7 +56,8 @@
     "price": 3200,
     "pictureUrl": "5.jpg",
     "category": "Armas de Fuego",
-    "brand": "Karmac"
+    "brand": "Karmac",
+    "stock": 10
   },
   {
     "id": 6,
@@ -60,6 +66,7 @@
     "price": 2300,
     "pictureUrl": "6.jpeg",
     "category": "Armas de Fuego",
-    "brand": "Aibuddy"
+    "brand": "Aibuddy",
+    "stock": 10
   }
 ]
