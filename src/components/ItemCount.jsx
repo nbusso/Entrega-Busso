@@ -29,8 +29,8 @@ const ItemCount = ({ item }) => {
     }
   };
 
-  const handleAgregar = () => {
-    console.log({ ...item, cantidad: cantidad });
+  const onAdd = () => {
+    console.log("Item Agregado al Carrito");
   };
 
   return (
@@ -41,26 +41,29 @@ const ItemCount = ({ item }) => {
           ripple={true}
           className="bg-vaporwave-gustoGold rounded-r-none"
           onClick={handleRestar}
+          disabled={!item.stock}
         >
           -
         </Button>
         <Input
           variant="standard"
           className="rounded-none indent-4 text-lg pb-4 min-w-3"
-          value={cantidad}
+          value={!item.stock ? "Sin Stock" : cantidad}
           onChange={handleCambio}
         />
         <Button
           ripple={true}
           className="bg-vaporwave-gustoGold rounded-l-none"
           onClick={handleSumar}
+          disabled={!item.stock}
         >
           +
         </Button>
       </div>
       <Button
-        onClick={handleAgregar}
+        onClick={onAdd}
         className="flex items-center gap-3 mx-auto mt-4"
+        disabled={!item.stock}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

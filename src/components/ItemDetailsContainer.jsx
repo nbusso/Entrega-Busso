@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data/products.json";
 import ItemCount from "./ItemCount";
 import { Typography } from "@material-tailwind/react";
+import { CartContext } from "../contexts/CartContext";
 
 export const ItemDetailsContainer = () => {
   const [item, setItem] = useState(null);
+  const { items } = useContext(CartContext);
 
   const { id } = useParams();
 
@@ -39,7 +41,9 @@ export const ItemDetailsContainer = () => {
           <Typography variant="h5">Marca: {item.brand}</Typography>
           <hr className="my-5" />
           <div className="min-h-48 flex flex-col justify-between">
-            <Typography variant="paragraph">{item.description}</Typography>
+            <Typography variant="paragraph">
+              {item.description} Stock: {item.stock}
+            </Typography>
             <Typography
               variant="h1"
               className="text-right text-vaporwave-loveVesselPink"
