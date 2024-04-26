@@ -7,7 +7,8 @@ import { CartContext } from "../contexts/CartContext";
 
 export const ItemDetailsContainer = () => {
   const [item, setItem] = useState(null);
-  const { items } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
+  console.log(cart);
 
   const { id } = useParams();
 

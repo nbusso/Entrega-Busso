@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Input } from "@material-tailwind/react";
+import { CartContext } from "../contexts/CartContext";
 
 const ItemCount = ({ item }) => {
   const [cantidad, setCantidad] = useState(1);
   const [mensajeError, setMensajeError] = useState(null);
+  const { cart, setCart } = useContext(CartContext);
 
   const handleRestar = () => {
     if (cantidad > 1) {
@@ -21,7 +23,7 @@ const ItemCount = ({ item }) => {
 
   const handleCambio = () => {
     const nuevoValor = parseInt(event.target.value);
-    if (!isNaN(nuevoValor) && nuevoValor >= 0) {
+    if (!isNaN(nuevoValor) && nuevoValor >= 0 && nuevoValor <= item.stock) {
       setCantidad(nuevoValor);
       setMensajeError(null);
     } else {
@@ -30,7 +32,9 @@ const ItemCount = ({ item }) => {
   };
 
   const onAdd = () => {
-    console.log("Item Agregado al Carrito");
+    const itemAgregado = { ...item, cantidad };
+
+    setCart([...cart, itemAgregado]);
   };
 
   return (
@@ -41,14 +45,14 @@ const ItemCount = ({ item }) => {
           ripple={true}
           className="bg-vaporwave-gustoGold rounded-r-none"
           onClick={handleRestar}
-          disabled={!item.stock}
+          disabled={!item.stock || cantidad <= 1}
         >
           -
         </Button>
         <Input
           variant="standard"
           className="rounded-none indent-4 text-lg pb-4 min-w-3"
-          value={!item.stock ? "Sin Stock" : cantidad}
+          value={item.stock ? cantidad : "Sin Stock"}
           onChange={handleCambio}
         />
         <Button
