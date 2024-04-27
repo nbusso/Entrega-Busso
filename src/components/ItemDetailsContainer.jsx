@@ -13,7 +13,7 @@ export const ItemDetailsContainer = () => {
 
   useEffect(() => {
     const get = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 2000);
+      setTimeout(() => resolve(data), 0);
     });
 
     get.then((data) => {

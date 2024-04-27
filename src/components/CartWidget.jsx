@@ -2,6 +2,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { Badge, IconButton } from "@material-tailwind/react";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 export const CartWidget = () => {
   const { cantidadEnCart } = useContext(CartContext);
@@ -12,9 +13,11 @@ export const CartWidget = () => {
       withBorder
       className="font-bold"
     >
-      <IconButton size="sm">
-        <ShoppingCartIcon className="h-4 w-4" />
-      </IconButton>
+      <Link to="/cart">
+        <IconButton size="sm">
+          <ShoppingCartIcon className="h-4 w-4" />
+        </IconButton>
+      </Link>
     </Badge>
   );
 };

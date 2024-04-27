@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
   Collapse,
@@ -9,6 +9,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { CartWidget } from "./CartWidget";
 import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
+import { Cart } from "./Cart";
+import { CartContext } from "../contexts/CartContext";
 
 function NavList() {
   const customFont = "font-roboto font-bold";

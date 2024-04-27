@@ -10,7 +10,7 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     const get = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 2000);
+      setTimeout(() => resolve(data), 0);
     });
     get.then((data) => {
       if (id) {
@@ -25,7 +25,7 @@ export const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <div className="bg-synthwave-midnightDreams grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1 place-items-center mx-auto max-w-7xl pt-5 pb-14 px-2 sm:px-6 lg:px-8">
+    <div className="bg-synthwave-midnightDreams grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1 place-items-center mx-auto max-w-7xl pt-5 pb-14 px-2 sm:px-6 lg:px-8 relative">
       <ItemList items={items} />
     </div>
   );
