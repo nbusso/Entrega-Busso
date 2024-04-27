@@ -33,8 +33,17 @@ const ItemCount = ({ item }) => {
 
   const onAdd = () => {
     const itemAgregado = { ...item, cantidad };
+    const newCart = [...cart];
+    const existeEnCart = newCart.find(
+      (producto) => producto.id === itemAgregado.id
+    );
 
-    setCart([...cart, itemAgregado]);
+    if (existeEnCart) {
+      existeEnCart.cantidad += cantidad;
+    } else {
+      newCart.push(itemAgregado);
+    }
+    setCart(newCart);
   };
 
   return (

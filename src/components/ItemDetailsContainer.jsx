@@ -9,7 +9,6 @@ export const ItemDetailsContainer = () => {
   const [item, setItem] = useState(null);
   const { cart, setCart } = useContext(CartContext);
   console.log(cart);
-
   const { id } = useParams();
 
   useEffect(() => {
