@@ -4,6 +4,7 @@ import data from "../data/products.json";
 import ItemCount from "./ItemCount";
 import { Typography } from "@material-tailwind/react";
 import { CartContext } from "../contexts/CartContext";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 export const ItemDetailsContainer = () => {
   const [item, setItem] = useState(null);
@@ -12,15 +13,14 @@ export const ItemDetailsContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const get = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 0);
-    });
+    const db = getFirestore();
 
-    get.then((data) => {
-      const filteredData = data.find((data) => data.id === Number(id));
-      setItem(filteredData);
+    const getItem = doc(db, "items", id);
+
+    getDoc(getItem).then((snapshot) => {
+      snapshot.exists() && setItem({ id: id, ...snapshot.data() });
     });
-  }, [id]);
+  }, []);
 
   if (!item) return null;
 
