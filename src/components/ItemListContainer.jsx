@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
-import data from "../data/products.json";
 import { useParams } from "react-router-dom";
 import {
   getFirestore,
@@ -27,8 +26,6 @@ export const ItemListContainer = () => {
         where("category", "==", id)
       );
     }
-
-    console.log(refCollection);
 
     getDocs(refCollection).then((snapshot) => {
       setItems(
