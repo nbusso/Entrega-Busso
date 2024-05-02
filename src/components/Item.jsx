@@ -7,6 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount";
 
 export const Item = ({ item }) => {
   return (
@@ -50,13 +51,14 @@ export const Item = ({ item }) => {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button
+        <ItemCount item={item} />
+        {/* <Button
           ripple={false}
           fullWidth={true}
           className="bg-synthwave-shadownPlanet border border-synthwave-pinkBite text-synthwave-pinkBite shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
         >
           Agregar al Carrito
-        </Button>
+        </Button> */}
         <Link to={`/item/${item.id}`}>
           <Button
             ripple={false}
