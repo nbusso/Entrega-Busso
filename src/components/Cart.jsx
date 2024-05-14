@@ -90,7 +90,6 @@ export const Cart = () => {
           vaciarCart();
         }
       });
-      // console.log(order.buyer.name, "hola", order.buyer.email);
     } else {
       alert(
         "Por favor asegurese que los campos 'Nombre' y 'Email' esten completos!"
