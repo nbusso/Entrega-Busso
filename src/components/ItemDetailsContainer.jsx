@@ -1,15 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemCount from "./ItemCount";
-import { Typography } from "@material-tailwind/react";
-import { CartContext } from "../contexts/CartContext";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { Test } from "./Test";
 import { ItemDetails } from "./ItemDetails";
 
 export const ItemDetailsContainer = () => {
   const [item, setItem] = useState(null);
-  const { cart, setCart } = useContext(CartContext);
   const { id } = useParams();
 
   useEffect(() => {

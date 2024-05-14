@@ -8,12 +8,22 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(cartInicial);
   const [showCart, setShowCart] = useState(true);
 
+  const deleteItem = (id) => {
+    const lugarEnCarrito = cart.findIndex((prod) => prod.id === id);
+    const carritoAlt = [...cart];
+    carritoAlt.splice(lugarEnCarrito, 1);
+    setCart(carritoAlt);
+  };
+
   const cantidadEnCart = () => {
     return cart.reduce((acc, producto) => acc + producto.cantidad, 0);
   };
 
   const precioTotal = () => {
-    return cart.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0);
+    return cart.reduce(
+      (acc, producto) => acc + producto.price * producto.cantidad,
+      0
+    );
   };
 
   const vaciarCart = () => {
@@ -34,6 +44,7 @@ export const CartProvider = ({ children }) => {
         setShowCart,
         precioTotal,
         vaciarCart,
+        deleteItem,
       }}
     >
       {children}
