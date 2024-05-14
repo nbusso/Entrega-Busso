@@ -82,6 +82,7 @@ export const Cart = () => {
     addDoc(orderCollection, order).then(({ id }) => {
       if (id) {
         alert("Su orden: " + id + " ha sido completada!");
+        vaciarCart();
       }
     });
   };
