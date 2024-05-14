@@ -79,12 +79,23 @@ export const Cart = () => {
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
 
-    addDoc(orderCollection, order).then(({ id }) => {
-      if (id) {
-        alert("Su orden: " + id + " ha sido completada!");
-        vaciarCart();
-      }
-    });
+    if (
+      order.items.length > 0 &&
+      order.buyer.name != "" &&
+      order.buyer.email != ""
+    ) {
+      addDoc(orderCollection, order).then(({ id }) => {
+        if (id) {
+          alert("Su orden: " + id + " ha sido completada!");
+          vaciarCart();
+        }
+      });
+      // console.log(order.buyer.name, "hola", order.buyer.email);
+    } else {
+      alert(
+        "Por favor asegurese que los campos 'Nombre' y 'Email' esten completos!"
+      );
+    }
   };
 
   return (
@@ -115,30 +126,36 @@ export const Cart = () => {
             <div className="mt-2">
               <label>Nombre:</label>
               <input
+                placeholder="John Doe"
                 className="ml-2"
                 type="text"
                 value={buyer.name}
                 name="name"
                 onChange={handleChange}
               />
+              <span className="ml-2">* campo obligatorio.</span>
             </div>
-            <div className="mt-2">
-              <label>Teléfono:</label>
-              <input
-                className="ml-2"
-                type="number"
-                value={buyer.phone}
-                name="phone"
-                onChange={handleChange}
-              />
-            </div>
+
             <div className="mt-2">
               <label>Email:</label>
               <input
+                placeholder="john@doe.com"
                 className="ml-2"
                 type="email"
                 value={buyer.email}
                 name="email"
+                onChange={handleChange}
+              />
+              <span className="ml-2">* campo obligatorio.</span>
+            </div>
+            <div className="mt-2">
+              <label>Teléfono:</label>
+              <input
+                placeholder="03404-998877"
+                className="ml-2"
+                type="number"
+                value={buyer.phone}
+                name="phone"
                 onChange={handleChange}
               />
             </div>
